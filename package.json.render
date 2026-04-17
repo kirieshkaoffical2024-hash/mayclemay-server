@@ -1,0 +1,20 @@
+{
+  "name": "mayclemay-server",
+  "version": "1.0.0",
+  "description": "MaycleMay Cloud Server",
+  "main": "cloud-server.js",
+  "scripts": {
+    "start": "node cloud-server.js"
+  },
+  "keywords": ["messenger", "chat", "server"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io": "^4.6.0",
+    "express": "^4.18.0",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

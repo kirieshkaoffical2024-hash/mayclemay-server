@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaycleMay Messenger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login-screen" class="screen active">
+        <div class="connection-status" id="connectionStatus">🔄 Подключение...</div>
+        <div class="login-container">
+            <h1>MaycleMay</h1>
+            <p class="subtitle">Добро пожаловать в мессенджер</p>
+            
+            <div class="profile-photo-upload">
+                <div class="photo-preview" id="photoPreview">
+                    <span>📷</span>
+                </div>
+                <input type="file" id="photoInput" accept="image/*" style="display: none;">
+                <button onclick="document.getElementById('photoInput').click()" class="upload-btn">
+                    Выбрать фото
+                </button>
+            </div>
+            
+            <input type="text" id="nickname" placeholder="Ваше имя" maxlength="30">
+            <input type="text" id="username" placeholder="@юзернейм" maxlength="20">
+            
+            <button onclick="login()" class="login-btn">Войти</button>
+        </div>
+    </div>
+
+    <div id="chat-screen" class="screen">
+        <div class="sidebar">
+            <div class="user-profile">
+                <img id="userPhoto" src="" alt="Profile">
+                <div class="user-info">
+                    <div class="user-nickname" id="userNickname"></div>
+                    <div class="user-username" id="userUsername"></div>
+                </div>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="🔍 Поиск по @юзернейму">
+            </div>
+            
+            <div class="contacts-list" id="contactsList"></div>
+        </div>
+
+        <div class="chat-area">
+            <div class="chat-header" id="chatHeader">
+                <span>Выберите контакт</span>
+            </div>
+            
+            <div class="messages-container" id="messagesContainer"></div>
+            <div id="typingIndicator">печатает...</div>
+            
+            <div class="message-input-container">
+                <button class="emoji-btn" onclick="toggleEmojiPicker()">😊</button>
+                <input type="text" id="messageInput" placeholder="Введите сообщение...">
+                <button onclick="sendMessage()" class="send-btn">Отправить</button>
+            </div>
+            
+            <div class="emoji-picker" id="emojiPicker"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
